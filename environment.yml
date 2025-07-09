@@ -1,0 +1,33 @@
+name: mmfe
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9
+  - nvidia::libcublas
+  - pytorch::pytorch
+  - pytorch::torchvision
+  - pytorch::pytorch-cuda=12.1
+  - scikit-learn=1.5.2
+  - rdkit
+  - jupyter
+  - numpy
+  - scipy
+  - pandas
+  - matplotlib
+  - seaborn
+  - tqdm
+  - xgboost
+  - dask # for molscore
+  - prolif # for molscore
+  - openbabel # for molscore
+  - openeye::openeye-toolkits # for molscore
+  - bioconda::smina=2017.11.9 # for molscore
+  - bioconda::reduce # for molscore
+  - pip
+  - pip:
+    - molscore
+    - transformers>=4.5.1
+    - SmilesPE==0.0.3
+    - OpenNMT-py==2.2.0
+    - albumentations==1.1.0
+    - timm==0.5.4

@@ -1,0 +1,8 @@
+.ipynb_checkpoints/
+__pycache__/
+results/*
+nohup.out
+
+molscribe/ckpts/*
+molscribe/__pycache__/*
+molscribe/.ipynb_checkpoints/*

@@ -10,7 +10,7 @@ Each notebook is self-contained and organized into data input, parameter configu
 
 ---
 
-## Getting Started
+## Getting Started(updated July 9, 2025)
 
 ### 1. Clone this repository
 
@@ -21,7 +21,7 @@ cd MMFE
 
 ### 2. Environment Setting
 ```bash
-conda env env create -f environment.yml
+conda env create -f environment.yml
 conda activate mmfe
 ```
 
@@ -30,3 +30,14 @@ conda activate mmfe
 jupyter notebook --ip 0.0.0.0
 ```
 
+## Authors
+
+- [Jin Hyuk Kim](https://scholar.google.com/citations?user=8ly72dcAAAAJ&hl=ko)
+
+- [Jonghwan Choi](https://scholar.google.com/citations?user=4xSw9C8AAAAJ&hl=ko)
+
+## Contacts
+
+- Email: rlawlsgurjh@gmail.com
+
+Feel free to reach out to us with any questions!

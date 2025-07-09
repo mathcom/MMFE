@@ -3,10 +3,10 @@
 This repository provides tools to run the **MMFE** (Multi‐modal Molecular Feature Extraction for Drug
 Selectivity Prediction) analysis at two different concentrations:
 
-- **MMFE_3uM.ipynb**: run MMFE at **3 µM** concentration  
-- **MMFE_300nM.ipynb**: run MMFE at **300 nM** concentration  
+- **MMFE_3uM.ipynb**: run MMFE at **3uM** concentration  
+- **MMFE_300nM.ipynb**: run MMFE at **300nM** concentration  
 
-Each notebook is self-contained and shows how to load input data, configure parameters, and visualize results for the specified concentration.
+Each notebook is self-contained and organized into data input, parameter configuration, training, and result table visualization.
 
 ---
 
@@ -21,7 +21,7 @@ cd MMFE
 
 ### 2. Environment Setting
 ```bash
-conda env create -f environment.yml
+conda env env create -f environment.yml
 conda activate mmfe
 ```
 

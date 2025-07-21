@@ -10,7 +10,7 @@ Each notebook is self-contained and organized into data input, parameter configu
 
 ---
 
-## Getting Started(updated July 9, 2025)
+## Getting Started(updated July 21, 2025)
 
 ### 1. Clone this repository
 

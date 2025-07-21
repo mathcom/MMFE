@@ -3,8 +3,8 @@
 This repository provides tools to run the **MMFE** (Multi‐modal Molecular Feature Extraction for Drug
 Selectivity Prediction) analysis at two different concentrations:
 
-- **MMFE_3uM.ipynb**: run MMFE at **3uM** concentration  
-- **MMFE_300nM.ipynb**: run MMFE at **300nM** concentration  
+- **MMFE_3uM.ipynb**: run MMFE at **3 μM** concentration  
+- **MMFE_300nM.ipynb**: run MMFE at **300 nM** concentration  
 
 Each notebook is self-contained and organized into data input, parameter configuration, training, and result table visualization.
 

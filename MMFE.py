@@ -1,3 +1,6 @@
+import warnings
+warnings.filterwarnings('ignore', category=FutureWarning)
+
 import os
 import joblib
 import tqdm
@@ -8,7 +11,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.preprocessing import MinMaxScaler
 from FeatureExtraction import MolEncoder
-from Embedding import MLP, Trainer, normalize, denormalize, get_metrics, get_metrics_classification
+from Embedding import MLP, Trainer, normalize, denormalize, get_metrics
 
 
 def sigmoid(x):

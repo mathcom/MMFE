@@ -3,13 +3,8 @@ import torch
 import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader
 
-# Regression
 from sklearn.metrics import root_mean_squared_error, r2_score
-from sklearn.metrics import mean_absolute_error
-from scipy.stats import pearsonr, spearmanr
-
-# Classification
-from sklearn.metrics import f1_score, accuracy_score, precision_score, recall_score, roc_auc_score
+from scipy.stats import pearsonr
 
 
 
@@ -17,23 +12,8 @@ def get_metrics(y_real, y_pred):
     metrics = {
         'rmse':root_mean_squared_error(y_real, y_pred),
         'r2':r2_score(y_real, y_pred),
-        'pcc':pearsonr(y_real, y_pred)[0],
-        'srcc':spearmanr(y_real, y_pred)[0],
+        'pcc':pearsonr(y_real, y_pred)[0]
     }
-    return metrics
-
-def get_metrics_classification(y_real, y_pred):
-    metrics = {
-        'f1':        f1_score(y_real, y_pred),
-        'accuracy':  accuracy_score(y_real, y_pred),
-        'precision': precision_score(y_real, y_pred),
-        'recall':    recall_score(y_real, y_pred),
-    }
-    # safe AUC 계산
-    try:
-        metrics['auc'] = roc_auc_score(y_real, y_pred)
-    except ValueError:
-        metrics['auc'] = np.nan
     return metrics
 
 def normalize(y):
@@ -114,7 +94,7 @@ class Trainer(Interface):
         optimizer = torch.optim.Adam(self.model.parameters(), lr=learning_rate)
                 
         ## train
-        self.history = {'epoch':[], 'loss':[], 'val_rmse':[], 'val_r2':[], 'val_pcc':[], 'val_srcc':[]}
+        self.history = {'epoch':[], 'loss':[], 'val_rmse':[], 'val_r2':[], 'val_pcc':[]}
         best_score = 1e+6
         for i in range(num_epochs):
             loss_avg = 0.
@@ -143,7 +123,6 @@ class Trainer(Interface):
                 self.history['val_rmse'].append(metrics['rmse'])
                 self.history['val_r2'].append(metrics['r2'])
                 self.history['val_pcc'].append(metrics['pcc'])
-                self.history['val_srcc'].append(metrics['srcc'])
                 if metrics['rmse'] < best_score:
                     best_score = metrics['rmse']
                     ## save
@@ -152,7 +131,6 @@ class Trainer(Interface):
                 self.history['val_rmse'].append(0)
                 self.history['val_r2'].append(0)
                 self.history['val_pcc'].append(0)
-                self.history['val_srcc'].append(0)
                 self.save_model(filepath_ckpt)
         
         self.model.eval()

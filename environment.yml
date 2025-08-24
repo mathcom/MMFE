@@ -1,32 +1,48 @@
 name: mmfe
 channels:
   - conda-forge
+  - defaults
 dependencies:
-  - python=3.9
+  - python=3.9.19
   - nvidia::libcublas
-  - pytorch::pytorch
+  - pytorch::pytorch=1.12.1=*cuda11.6*
   - pytorch::torchvision
-  - pytorch::pytorch-cuda=12.1
-  - scikit-learn=1.5.2
-  - rdkit
+  - pytorch::torchtext=0.5.0
+  - scikit-learn=1.3.2
+  - sympy=1.13.1
+  - transformers=4.46.3
+  - tokenizers=0.20.0
+  - gensim=4.3.3
+  - sentencepiece=0.1.99
+  - sentencepiece-spm=0.1.99
+  - pillow=11.1.0
+  - scikit-image=0.24.0
+  - openbabel=3.1.1
+  - rdkit=2023.03.3
+  - tensorboard
+  - tensorboardx
+  - numpy=1.26.4
+  - gsd=3.3.1
+  - mkl=2023.2.0
   - jupyter
-  - numpy
   - scipy
   - pandas
   - matplotlib
   - seaborn
-  - tqdm
-  - xgboost
-  - dask # for molscore
-  - prolif # for molscore
-  - openbabel # for molscore
-  - openeye::openeye-toolkits # for molscore
-  - bioconda::smina=2017.11.9 # for molscore
-  - bioconda::reduce # for molscore
+  - openeye::openeye-toolkits
+  - bioconda::smina=2017.11.9
+  - bioconda::reduce
   - pip
   - pip:
+    - tqdm
+    - xgboost
+    - dask
+    - prolif
+    - rdkit==2023.3.3
+    - molbloom
+    - gensim==4.3.3
     - molscore
-    - transformers>=4.5.1
+    - sentencepiece==0.1.99
     - SmilesPE==0.0.3
     - OpenNMT-py==2.2.0
     - albumentations==1.1.0

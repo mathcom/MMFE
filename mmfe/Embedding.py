@@ -3,14 +3,12 @@ import torch
 import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader
 
-from sklearn.metrics import root_mean_squared_error, r2_score
+from sklearn.metrics import mean_squared_error, r2_score
 from scipy.stats import pearsonr
-
-
 
 def get_metrics(y_real, y_pred):
     metrics = {
-        'rmse':root_mean_squared_error(y_real, y_pred),
+        'rmse':np.sqrt(mean_squared_error(y_real, y_pred)),
         'r2':r2_score(y_real, y_pred),
         'pcc':pearsonr(y_real, y_pred)[0]
     }
@@ -69,7 +67,7 @@ class Interface:
         torch.save(self.model.state_dict(), filepath)
         
     def load_model(self, filepath):
-        weights = torch.load(filepath, weights_only=True)
+        weights = torch.load(filepath) #, weights_only=True)
         self.model.load_state_dict(weights)
 
 

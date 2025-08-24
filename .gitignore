@@ -1,8 +1,8 @@
 .ipynb_checkpoints/
 __pycache__/
-results/*
-nohup.out
 
-molscribe/ckpts/*
-molscribe/__pycache__/*
-molscribe/.ipynb_checkpoints/*
+results/*
+
+mmfe/molscribe/ckpts/*
+mmfe/molscribe/__pycache__/*
+mmfe/molscribe/.ipynb_checkpoints/*

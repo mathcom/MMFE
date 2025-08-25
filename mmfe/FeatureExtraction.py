@@ -6,7 +6,7 @@ from torchvision import transforms
 from PIL import Image
 from rdkit.Chem import AllChem, Draw, MolFromSmiles, MolToSmiles
 from transformers import AutoModelForMaskedLM, AutoTokenizer
-from molscribe.model import Encoder
+from mmfe.molscribe.model import Encoder
 
 
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
@@ -54,7 +54,7 @@ class MolEncoder:
         
         ## load states
         filepath = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'molscribe', 'ckpts', 'swin_base_char_aux_1m680k.pth')
-        states = torch.load(filepath, map_location=self.device, weights_only=True)['encoder']
+        states = torch.load(filepath, map_location=self.device)['encoder'] #, weights_only=True)['encoder']
         
         ## safe load
         def _remove_prefix(state_dict):

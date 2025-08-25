@@ -10,8 +10,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.preprocessing import MinMaxScaler
-from FeatureExtraction import MolEncoder
-from Embedding import MLP, Trainer, normalize, denormalize, get_metrics
+from mmfe.FeatureExtraction import MolEncoder
+from mmfe.Embedding import MLP, Trainer, normalize, denormalize, get_metrics
 
 
 def sigmoid(x):
